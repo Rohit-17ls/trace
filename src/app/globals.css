@@ -1,0 +1,135 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background : linear-gradient(45deg, black, #14002b);
+  color: #bab8c7;
+  height: fit-content;
+  min-height: 100vh;
+}
+
+
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  /* background : linear-gradient(45deg, black, #14002b); */
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  height: fit-content;
+}
+
+.card-shadow{
+  box-shadow : rgba(132, 59, 206, 0.15) 0px 4px 24px;
+  border : 1px solid #3d2259;
+}
+
+.nav{
+  box-shadow : rgba(132, 59, 206, 0.15) 0px 4px 24px;
+  border-bottom : 1px solid #3d2259;
+}
+
+.nav-link{
+  color :#e605ffd6;
+}
+
+.nav-link:hover{
+  opacity : 0.9;
+}
+
+.suggestion-color{
+  color :#e605ffd6;
+
+}
+
+button{
+  background: #5b21b6;
+  color: white
+}
+
+button:hover{
+  opacity: 0.9;
+}
+
+ul{
+  list-style: circle;
+  line-height: 30px;
+}
+
+ol{
+  list-style: decimal;
+}
+
+
+.link{
+  color: #9230fa;
+  font-weight: bold;
+  padding: 0 3px;
+  text-decoration: underline;
+}
+
+@keyframes rotation {
+  0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg);
+  }
+} 
+
+*::-webkit-scrollbar {
+  width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  background: linear-gradient(45deg, black, #14002b);;
+  opacity: 0.1;
+}
+
+textarea::-webkit-scrollbar-track {
+  background: transparent;
+  opacity: 0.1;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #e605ffd6;
+  border-radius: 1em;
+}
+
+input::placeholder{
+  color : rgba(84, 84, 84, 0.858);
+  opacity : 0.7;
+}
+
+
+#loader {
+  margin: auto;
+  width: 48px;
+  height: 48px;
+  border: 5px solid #ffffffa9;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+#small-loader {
+  margin: auto;
+  width: 22px;
+  height: 22px;
+  border: 3px solid #ffffffa9;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
