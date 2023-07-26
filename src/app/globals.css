@@ -32,6 +32,11 @@ body {
   border : 1px solid #3d2259;
 }
 
+.strong-shadow{
+    box-shadow: rgba(132, 59, 206, 0.15) 0px 4px 24px 10px;
+    border: 2px solid #3d2259;
+}
+
 .nav{
   box-shadow : rgba(132, 59, 206, 0.15) 0px 4px 24px;
   border-bottom : 1px solid #3d2259;

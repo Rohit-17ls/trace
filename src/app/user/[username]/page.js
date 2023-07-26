@@ -12,11 +12,17 @@ export default async function Page({params}){
                                                    select : {id : true, createdAt : true}});
     if(!userData) isUserFound = false;
     
-    let blogs;
+    let blogs, joinDate;
     if(userData){
         console.log(userData)
-    
-        blogs = await prisma.blog.findMany({where : {creatorId : userData.id}, select : {blogname : true, createdAt : true}});
+        joinDate = new Date(userData.createdAt).toLocaleString();
+
+        blogs = await prisma.blog.findMany({where : {creatorId : userData.id},
+                                            select : {blogname : true,
+                                                     createdAt : true},
+                                            orderBy : {createdAt : 'desc'}});
+
+        console.log(blogs);
     }
     
 
@@ -28,19 +34,22 @@ export default async function Page({params}){
                 isUserFound ? 
 
                 <section className="mb-auto mx-[5vw]">
-                    <strong className="block text-2xl font-semibold">{params.username}</strong>
-                    <strong className="block text-xl my-[5vh]">Blogs</strong>
+                    <div>
+                        <strong className="text-3xl font-semibold">{username}</strong>
+                        <span className="ml-[40vw] text-md text-gray-500">joined {joinDate}</span>
+                    </div>
+                    <strong className="block text-xl my-[5vh]">Blogs by {username} : </strong>
 
                     {blogs.map((blog, ind) => 
                         <nav className="nav-link font-semibold my-[1vh]" key={ind}>
-                            <Link href={`blogs/${blog.blogname.split(' ').join('-')}`} target='_blank'>{blog.blogname}</Link></nav>
+                            <Link href={`/blogs/${blog.blogname.split(' ').join('-')}`} target='_blank'>{blog.blogname.replace('$', '-')}</Link></nav>
                     )}
                 
                 </section>
 
                 : 
 
-                <div className="text-lg">
+                <div className="w-[80%] text-lg text-center">
                     <strong>404</strong> User not found
                 </div>
             }

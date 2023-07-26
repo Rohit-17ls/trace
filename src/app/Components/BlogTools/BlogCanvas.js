@@ -55,7 +55,7 @@ export default function BlogCanvas(){
             headers : {
                 'Content-Type' : 'application/json',
             },
-            body : JSON.stringify({title : head, markup})
+            body : JSON.stringify({title : head.replace('-', '$'), markup})
         });
         const data = await res.json();
         console.log(data);

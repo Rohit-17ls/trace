@@ -7,7 +7,7 @@ export default function Navbar(){
             <strong className="px-[2%] text-3xl text-white">Trace</strong>
             <div className="flex flex-row justify-evenly gap-5 px-[5%]">
                 <span className="nav-link font-semibold"><Link href='/blogs'>Blogs</Link></span>
-                <span className="nav-link font-semibold"><Link href='/signin'>Signin</Link></span>
+                <span className="nav-link font-semibold"><Link href='/signin'>Sign in</Link></span>
             </div>
         </nav>
         </div>
